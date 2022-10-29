@@ -1,0 +1,125 @@
+############################ banner ##########################
+banner:
+  enable : true
+  title : "Град Мастеров"
+  content : "Рады приветствовать вас на нашем фестевале-ярмарке. Здесь мы собрали для вас уникальные сувениры сделаные нашеми умельцами, сделаные с любовью и заботой об окружающей среде."
+  image : "images/banner.png"
+  # button
+  button:
+    enable : true
+    label : "Посмотреть всё"
+    link : "products"
+  # demo video
+  video:
+    enable : true
+    videoURL : "https://youtu.be/mrbvDE93co0"
+
+########################## About ##############################
+about:
+  enable : true
+  title : "Ярмарки под открытым небом"
+  content : "Мы проводим и настоящие праздники под открытым небом. Это и выступления и развлечения и ярамрки. Присоеденяйтесь к нам!"
+  image : "images/about.jpg"
+
+
+###################### Call to action ########################
+cta:
+  enable : true
+  title : "Эстетика, здоровье и польза"
+  content : "В каждом изделии заряд позитива и добра. Гарантируем :)"
+  image : "images/cta.png"
+  overlayImage : "images/cta-overlay.png"
+  button:
+    label : "Посмотреть всё"
+    link : "products"
+
+######################## raw material #######################
+material:
+  enable : true
+  title : "Состав нашего успеха"
+  subtitle : "Ингридиенты просты, но каждый из них ключевой:"
+  materialItem:
+    # material item loop
+    - title : "Проффесионалы"
+      image : "images/material/material-1.png"
+      content : "Мастера сочетают личный опыт и традиционные технологии"
+      
+    # material item loop
+    - title : "Неповторимость"
+      image : "images/material/material-2.png"
+      content : "Штучный коллекционный товар, залог того, что за действительно соящими вещями люди приходят к нам"
+      
+    # material item loop
+    - title : "Контроль качества"
+      image : "images/material/material-3.png"
+      content : "Мы проверяем целосность перед каждой продажей и пользуемся заботливой доставкой"
+      
+    # material item loop
+    - title : "Система скидок"
+      image : "images/material/material-4.png"
+      content : "Так как сам производим с нами легко договорится о скидках и рассрочках, проверьте"
+
+########################### Advantage #########################
+advantage:
+  enable : true
+  title : "Кому тут будет интересно?"
+  subtitle : "Мы открыты к сотрудничеству и постоянно ищем новое. Поэтому если мы будем рады если напишете нам. Вот кого мы особенно желаем видеть на нашей площадке:"
+  image : "images/advantage.png"
+  advantageList:
+    # advantage list loop
+    - listItem : "Мастеров-умельцев"
+    - listItem : "SMM - специалистов"
+    - listItem : "Представителей городских администрации"
+    - listItem : "Предпринимателей"
+    - listItem : "Путешественников и Музыкантов"
+    - listItem : "Производственников"
+
+
+######################## Promo Video ##########################
+video:
+  enable : true
+  title : "Наше дело"
+  content : "Как проходят фестивали и немного о наших бизнес-ангелах"
+  videoThumb : "images/video-thumb.jpg"
+  videoURL : "../video/how2.mp4"
+
+
+######################## Products #############################
+products:
+  enable : true
+  title : "Ярмарка"
+  # product item comes from "content/products"
+
+
+########################## Testimonial ########################
+testimonial:
+  enable : true
+  title : "Мнения о нас"
+  testimonialItem:
+    # testimonial item loop
+    - name : "Angelo Perara"
+      image : "images/clients/client-1.jpg" # size 100px*100px
+      designation : "CEO, Dialogue Broad Band"
+      content : "Lorem ipsum dolor sit amet, <br> consetetur sadipscing elitr, diam <br> nonumy eirmod tempor"
+      rating : "five" # rating star, one to five
+      
+    # testimonial item loop
+    - name : "Riya Ventila"
+      image : "images/clients/client-2.jpg" # size 100px*100px
+      designation : "CEO, Dialogue Broad Band"
+      content : "Lorem ipsum dolor sit amet, <br> consetetur sadipscing elitr, diam <br> nonumy eirmod tempor"
+      rating : "three" # rating star, one to five
+      
+    # testimonial item loop
+    - name : "john Doe"
+      image : "images/clients/client-3.jpg" # size 100px*100px
+      designation : "CEO, Dialogue Broad Band"
+      content : "Lorem ipsum dolor sit amet, <br> consetetur sadipscing elitr, diam <br> nonumy eirmod tempor"
+      rating : "five" # rating star, one to five
+      
+    # testimonial item loop
+    - name : "Riya Ventila"
+      image : "images/clients/client-2.jpg" # size 100px*100px
+      designation : "CEO, Dialogue Broad Band"
+      content : "Lorem ipsum dolor sit amet, <br> consetetur sadipscing elitr, diam <br> nonumy eirmod tempor"
+      rating : "four" # rating star, one to five

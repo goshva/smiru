@@ -1,0 +1,91 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <!-- product image slider -->
+        <div class="product-slider">
+          {{ range .Params.Images }}
+          <div data-image="{{ .image | absURL }}">
+            <img class="img-fluid w-100" src="{{ .image | absURL }}" alt="product-img">
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <h4 class="font-weight-medium">{{ .Title }}</h4>
+        <!-- rating star -->
+        {{ if site.Params.rating.enable }}
+        <div class="rw-ui-container"></div>
+        {{ end }}
+        <div class="my-4">
+          {{ if .Params.PriceBefore }}
+          <s>{{ site.Params.currencySymbol }}{{ .Params.PriceBefore }}</s>
+          {{ end }}
+          <span class="lead text-primary font-weight-medium">{{ site.Params.currencySymbol }}{{ .Params.Price }}</span>
+        </div>
+        <h5>Описание</h5>
+        <p>{{ .Params.ShortDescription | markdownify }}
+          <a href="https://www.instagram.com/p/{{ .Params.productID | safeURL }}"><i class="ti-instagram text-primary"></i></a>
+        </p>
+        <button class="snipcart-add-item btn btn-primary" data-item-id="{{ .Params.ProductID }}"
+          data-item-name="{{ .Title }}" {{ range first 1 .Params.Images }} data-item-image="{{ .image | absURL }}" data-item-count="1"
+          {{ end }} data-item-price="{{ .Params.Price }}" data-item-url="{{ .Permalink }}" data-item-description="{{ .Description }}" data-toggle="modal" data-target="#cartBox">
+          В корзину 
+          <i class="ti-shopping-cart"></i>
+        </button>
+      </div>
+      <div class="col-12 mt-5">
+        <ul class="nav nav-tabs border-bottom-0" id="myTab" role="tablist">
+          <li class="nav-item mr-3">
+            <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
+              aria-controls="description" aria-selected="true">Description</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
+              aria-selected="false">Reviews</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+            <div class="content">{{ .Content }}</div>
+          </div>
+          <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+            {{ template "_internal/disqus.html" . }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="cartBox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Корзина покупок</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group" id="cartList">
+          <!--<li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+            Morbi leo risus
+            <span class="badge badge-primary badge-pill">1</span>
+          </li>-->
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary equaring">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{ partial "cta.html" . }}
+
+{{ end }}
