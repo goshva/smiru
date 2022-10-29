@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://grad-masterov.ru"
+baseURL = "https://goshva.github.io/smiru/"
 languageCode = "ru"
 title = "Град Мастеров | Фестивали и Ярмарки на КМВ и online"
 theme = "hargo"
